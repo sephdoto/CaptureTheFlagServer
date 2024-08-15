@@ -1,13 +1,13 @@
 package de.unimannheim.swt.pse.ctf.game;
 
-import de.unimannheim.swt.pse.ctf.game.state.GameState;
-import de.unimannheim.swt.pse.ctf.game.state.Move;
-import de.unimannheim.swt.pse.ctf.game.state.Piece;
-import de.unimannheim.swt.pse.ctf.game.state.Team;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.Stream;
+import de.unimannheim.swt.pse.ctf.game.state.GameState;
+import de.unimannheim.swt.pse.ctf.game.state.Move;
+import de.unimannheim.swt.pse.ctf.game.state.Piece;
+import de.unimannheim.swt.pse.ctf.game.state.Team;
 
 /** This class contains useful methods for the GameEngine. */
 public class EngineTools extends GameUtilities {

@@ -1,14 +1,5 @@
 package de.unimannheim.swt.pse.ctf.game;
 
-import de.unimannheim.swt.pse.ctf.game.exceptions.GameOver;
-import de.unimannheim.swt.pse.ctf.game.exceptions.InvalidMove;
-import de.unimannheim.swt.pse.ctf.game.exceptions.NoMoreTeamSlots;
-import de.unimannheim.swt.pse.ctf.game.exceptions.TooManyPiecesException;
-import de.unimannheim.swt.pse.ctf.game.map.MapTemplate;
-import de.unimannheim.swt.pse.ctf.game.state.GameState;
-import de.unimannheim.swt.pse.ctf.game.state.Move;
-import de.unimannheim.swt.pse.ctf.game.state.Piece;
-import de.unimannheim.swt.pse.ctf.game.state.Team;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.ZoneId;
@@ -19,13 +10,21 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-import javafx.scene.paint.Color;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import de.unimannheim.swt.pse.ctf.game.exceptions.GameOver;
+import de.unimannheim.swt.pse.ctf.game.exceptions.InvalidMove;
+import de.unimannheim.swt.pse.ctf.game.exceptions.NoMoreTeamSlots;
+import de.unimannheim.swt.pse.ctf.game.exceptions.TooManyPiecesException;
+import de.unimannheim.swt.pse.ctf.game.map.MapTemplate;
+import de.unimannheim.swt.pse.ctf.game.state.GameState;
+import de.unimannheim.swt.pse.ctf.game.state.Move;
+import de.unimannheim.swt.pse.ctf.game.state.Piece;
+import de.unimannheim.swt.pse.ctf.game.state.Team;
+import javafx.scene.paint.Color;
 
 /**
  * Implementation of the {@link Game} interface from Team CFP14

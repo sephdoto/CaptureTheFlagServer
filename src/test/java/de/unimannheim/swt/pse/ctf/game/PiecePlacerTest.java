@@ -1,9 +1,10 @@
 package de.unimannheim.swt.pse.ctf.game;
 
-import static org.junit.jupiter.api.Assertions.*;
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import org.apache.commons.lang3.stream.Streams;

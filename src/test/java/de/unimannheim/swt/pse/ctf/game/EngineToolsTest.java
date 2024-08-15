@@ -1,6 +1,8 @@
 package de.unimannheim.swt.pse.ctf.game;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import de.unimannheim.swt.pse.ctf.game.map.Directions;
 import de.unimannheim.swt.pse.ctf.game.state.GameState;

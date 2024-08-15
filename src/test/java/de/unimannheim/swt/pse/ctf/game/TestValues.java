@@ -2,7 +2,6 @@ package de.unimannheim.swt.pse.ctf.game;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import de.unimannheim.swt.pse.ctf.game.map.MapTemplate;
 import de.unimannheim.swt.pse.ctf.game.state.GameState;
 import de.unimannheim.swt.pse.ctf.game.state.Move;

@@ -1,15 +1,11 @@
 package de.unimannheim.swt.pse.ctf.controller;
 
-import de.unimannheim.swt.pse.ctf.game.Game;
-import de.unimannheim.swt.pse.ctf.game.GameEngine;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import de.unimannheim.swt.pse.ctf.game.Game;
 
 /**
  * A simple class that manages a game session via a synchronized {@link Map}.

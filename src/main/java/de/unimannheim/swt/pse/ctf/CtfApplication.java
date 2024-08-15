@@ -1,10 +1,9 @@
 package de.unimannheim.swt.pse.ctf;
 
-import de.unimannheim.swt.pse.ctf.game.Game;
-import de.unimannheim.swt.pse.ctf.game.GameEngine;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import de.unimannheim.swt.pse.ctf.game.Game;
+import de.unimannheim.swt.pse.ctf.game.GameEngine;
 
 /** This is the main class (entry point) of your webservice. */
 @SpringBootApplication

@@ -1,8 +1,6 @@
 package de.unimannheim.swt.pse.ctf.game;
 
 import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Stream;
 import de.unimannheim.swt.pse.ctf.game.state.GameState;
 import de.unimannheim.swt.pse.ctf.game.state.Move;
 import de.unimannheim.swt.pse.ctf.game.state.Piece;

@@ -5,6 +5,8 @@ package de.unimannheim.swt.pse.ctf.game.exceptions;
  */
 public class TooManyPiecesException extends Exception {
   
+  private static final long serialVersionUID = -6089797858357889907L;
+
   public TooManyPiecesException (String info) {
     super(info); 
 

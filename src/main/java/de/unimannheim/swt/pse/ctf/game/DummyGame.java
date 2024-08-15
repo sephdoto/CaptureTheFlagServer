@@ -1,11 +1,10 @@
 package de.unimannheim.swt.pse.ctf.game;
 
+import java.util.Date;
 import de.unimannheim.swt.pse.ctf.game.map.MapTemplate;
 import de.unimannheim.swt.pse.ctf.game.state.GameState;
 import de.unimannheim.swt.pse.ctf.game.state.Move;
 import de.unimannheim.swt.pse.ctf.game.state.Team;
-
-import java.util.Date;
 
 /**
  * This is a dummy game that does nothing. Remove this class and provide your own implementation of {@link Game}.

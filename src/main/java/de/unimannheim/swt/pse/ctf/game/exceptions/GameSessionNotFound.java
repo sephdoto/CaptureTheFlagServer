@@ -8,4 +8,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * that is marked with a HTTP status if thrown.
  */
 @ResponseStatus(value = HttpStatus.NOT_FOUND, reason="Game session not found")
-public class GameSessionNotFound extends RuntimeException {}
+public class GameSessionNotFound extends RuntimeException {
+
+  private static final long serialVersionUID = 8501078138243172297L;}

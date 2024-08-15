@@ -1,21 +1,23 @@
 package de.unimannheim.swt.pse.ctf.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import de.unimannheim.swt.pse.ctf.controller.data.*;
-import de.unimannheim.swt.pse.ctf.game.map.MapTemplate;
-import de.unimannheim.swt.pse.ctf.game.state.GameState;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.io.IOException;
 import org.junit.jupiter.api.Test;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
-
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import de.unimannheim.swt.pse.ctf.controller.data.GameSessionRequest;
+import de.unimannheim.swt.pse.ctf.controller.data.GameSessionResponse;
+import de.unimannheim.swt.pse.ctf.controller.data.GiveupRequest;
+import de.unimannheim.swt.pse.ctf.controller.data.JoinGameRequest;
+import de.unimannheim.swt.pse.ctf.controller.data.JoinGameResponse;
+import de.unimannheim.swt.pse.ctf.controller.data.MoveRequest;
+import de.unimannheim.swt.pse.ctf.game.map.MapTemplate;
+import de.unimannheim.swt.pse.ctf.game.state.GameState;
 
 /**
  * Simple system 'live' test for {@link GameSessionController}.
@@ -31,6 +33,7 @@ public class GameSessionControllerTests {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @SuppressWarnings("unused")
     @Test
     void testCreateGameSession() throws Exception {
         // create a new game session

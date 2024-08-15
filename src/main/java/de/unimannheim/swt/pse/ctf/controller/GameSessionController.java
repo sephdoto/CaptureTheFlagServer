@@ -1,7 +1,25 @@
 package de.unimannheim.swt.pse.ctf.controller;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import de.unimannheim.swt.pse.ctf.CtfApplication;
-import de.unimannheim.swt.pse.ctf.controller.data.*;
+import de.unimannheim.swt.pse.ctf.controller.data.GameSessionRequest;
+import de.unimannheim.swt.pse.ctf.controller.data.GameSessionResponse;
+import de.unimannheim.swt.pse.ctf.controller.data.GiveupRequest;
+import de.unimannheim.swt.pse.ctf.controller.data.JoinGameRequest;
+import de.unimannheim.swt.pse.ctf.controller.data.JoinGameResponse;
+import de.unimannheim.swt.pse.ctf.controller.data.MoveRequest;
 import de.unimannheim.swt.pse.ctf.game.Game;
 import de.unimannheim.swt.pse.ctf.game.exceptions.ForbiddenMove;
 import de.unimannheim.swt.pse.ctf.game.exceptions.GameSessionNotFound;
@@ -12,10 +30,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import java.util.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.*;
 
 /**
  * This controller class defines several RESTful endpoints for managing game sessions / states:
