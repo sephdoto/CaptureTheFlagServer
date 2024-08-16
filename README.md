@@ -10,7 +10,7 @@ A Spring Boot project with integrated webserver.
 
 ### Run
 
-Execute CtfApplication.java or open the jar file the following way:  
+Execute CtfApplication.java in Code or open the server.jar from root the following way:  
 ```bash
 java -jar server.jar
 ```
