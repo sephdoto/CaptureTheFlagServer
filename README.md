@@ -25,23 +25,24 @@ The default port is 8080 for the standalone jar
 You should be able to use the following guide to get the package working in Maven
 
 A TL;DR is to add:
-1. The following code to your pom.xml file to specify an alternate package repository
+1. The following code to your pom.xml file to specify an alternate package repository (Ideally right after the properties block)
 ```bash
-<reporsitories>
-  <reporsitory>
-    <id>github</id>
-    <url>https://maven.pkg.github.com/sephdoto/CaptureTheFlagServer</url>
-  </reporsitory>
-</reporsitories>
+<repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/sephdoto/CaptureTheFlagServer</url>
+    </repository>
+  </repositories>
 ```
-2. Then import the package as a dependency in your Client by providing the following code in your pom.xml
+2. Then import the package as a dependency in your client by providing the following code in your pom.xml
 ```bash
-<dependency>
-  <groupId>de.uni-mannheim.swt.pse</groupId>
-  <artifactId>ctf</artifactId>
-  <version>1.0.0</version>
-</dependency>
+ <dependency>
+      <groupId>de.uni-mannheim.swt.pse</groupId>
+      <artifactId>ctf</artifactId>
+      <version>1.0.3</version>
+  </dependency>
 ```
+Note: Version number can change, so you might have to manually change it to the latest one in the dependency line
 
 ## Main Authors 
 - Raffay Syed
