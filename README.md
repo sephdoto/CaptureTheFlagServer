@@ -10,7 +10,7 @@ Capture the Flag server project which is a Spring-Boot based service.
 
 ### Run
 
-You can download the Jar from either the [release](https://github.com/sephdoto/CaptureTheFlagServer/releases/tag/publish) or the [packages](https://github.com/sephdoto/CaptureTheFlagServer/packages/2230324) section. Afterwards, execute CtfApplication.java in Code if you downloaded the whole source code or open the server.jar the following way:
+You can download the Jar from [releases](https://github.com/sephdoto/CaptureTheFlagServer/releases/tag/publish). Afterwards, execute CtfApplication.java in Code if you downloaded the whole source code or open the server.jar the following way:
 ```bash
 java -jar server.jar
 ```
@@ -32,15 +32,15 @@ A TL;DR is to add:
       <id>github</id>
       <url>https://maven.pkg.github.com/sephdoto/CaptureTheFlagServer</url>
     </repository>
-  </repositories>
+</repositories>
 ```
 2. Then import the package as a dependency in your client by providing the following code in your pom.xml
 ```bash
- <dependency>
-      <groupId>de.uni-mannheim.swt.pse</groupId>
-      <artifactId>ctf</artifactId>
-      <version>1.0.3</version>
-  </dependency>
+<dependency>
+  <groupId>de.uni-mannheim.swt.pse</groupId>
+  <artifactId>ctf</artifactId>
+  <version>1.0.3</version>
+</dependency>
 ```
 Note: Version number can change, so you might have to manually change it to the latest one in the dependency line
 

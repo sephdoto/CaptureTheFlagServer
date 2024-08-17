@@ -11,7 +11,7 @@
     </parent>
     <groupId>de.uni-mannheim.swt.pse</groupId>
     <artifactId>ctf</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>ctf</name>
     <description>capture the flag</description>
     <packaging>jar</packaging>
@@ -77,5 +77,11 @@
         </dependency>
     </dependencies>
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 </project>
