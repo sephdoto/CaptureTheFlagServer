@@ -6,11 +6,11 @@ The **requirements specification** can always be found in [REQUIREMENTS_SPECIFIC
 
 ## Project
 
-A Spring Boot project with integrated webserver.
+Capture the Flag server project which is a Spring-Boot based service.
 
 ### Run
 
-Execute CtfApplication.java in Code or open the server.jar from root the following way:  
+You can download the Jar from either the release or the package section. Afterwards, execute CtfApplication.java in Code if you downloaded the whole source code or open the server.jar the following way:
 ```bash
 java -jar server.jar
 ```
@@ -19,6 +19,7 @@ The server is also automatically started by our [UI](https://github.com/sephdoto
 ### Integrated Webservice
 
 Configuration (e.g., port) is located in [application.properties](src%2Fmain%2Fresources%2Fapplication.properties).
+The default port is 8080 for the standalone jar
 
 ## Main Authors 
 - Raffay Syed
