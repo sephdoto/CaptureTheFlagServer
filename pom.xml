@@ -20,6 +20,13 @@
         <springdoc.version>2.3.0</springdoc.version>
         <start-class>de.unimannheim.swt.pse.ctf.CtfApplication</start-class>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Github sephdoto Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/sephdoto/CaptureTheFlagServer</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
