@@ -2,12 +2,14 @@ package de.unimannheim.swt.pse.ctf.game;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-//import java.sql.Date;
+// import java.sql.Date;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-//import de.unimannheim.swt.pse.ctf.game.state.GameState;
-//import de.unimannheim.swt.pse.ctf.game.state.Move;
-//import de.unimannheim.swt.pse.ctf.game.state.Piece;
+
+// import de.unimannheim.swt.pse.ctf.game.state.GameState;
+// import de.unimannheim.swt.pse.ctf.game.state.Move;
+// import de.unimannheim.swt.pse.ctf.game.state.Piece;
 
 class GameEngineTest {
   static GameEngine gameEngine;
@@ -17,7 +19,8 @@ class GameEngineTest {
    */
   @BeforeEach
   void setUp() {
-//    gameEngine = new NewGameEngine(TestValues.getTestState(), TestValues.getTestTemplate(), false, true, new Date(System.currentTimeMillis() + 10000000));
+    //    gameEngine = new NewGameEngine(TestValues.getTestState(), TestValues.getTestTemplate(),
+    // false, true, new Date(System.currentTimeMillis() + 10000000));
   }
 
   @Test
@@ -25,16 +28,16 @@ class GameEngineTest {
     String color1 = GameEngine.getRandColor(TestValues.getTestState().getTeams()[0]);
     String color2 = GameEngine.getRandColor(TestValues.getTestState().getTeams()[0]);
     String color3 = GameEngine.getRandColor(TestValues.getTestState().getTeams()[1]);
-    
+
     assertEquals(color1, color2);
     assertNotEquals(color1, color3);
     assertNotEquals(color2, color3);
   }
-  
+
   /**
    * @author sistumpf
    */
-/*  @Test
+  /*  @Test
   void testGetRemainingGameTimeInSeconds() {
     assertTrue(gameEngine.getRemainingGameTimeInSeconds() > 0);    //the freshly started game ends 10 seconds after generating, returned int time should be greater than 0
 
@@ -48,22 +51,23 @@ class GameEngineTest {
   /**
    * @author sistumpf
    */
-/*  @Test
+  /*  @Test
   void testGetRemainingMoveTimeInSeconds() {
     GameEngine gameEngine = new GameEngine();
     assertEquals(-1, gameEngine.getRemainingMoveTimeInSeconds());
   }*/
 
-/*   @Test
+  /*   @Test
   void testGetRemainingTeamSlots() {
     fail("Not yet implemented");
   } */
 
   /**
    * It should not take more than 1ms to start a gameEngine, so this test should be valid
+   *
    * @author sistumpf
    */
-/*  @Test
+  /*  @Test
   void testGetStartedDate() {
     GameEngine gameEngine = new GameEngine();
     Date started = new Date(System.currentTimeMillis());
@@ -96,7 +100,6 @@ class GameEngineTest {
     assertTrue(gameEngine.isGameOver());                                        //game time over
   }*/
 
-
   /**
    * @author sistumpf
    */
@@ -105,7 +108,7 @@ class GameEngineTest {
     GameState state = TestValues.getTestState();
     state.setCurrentTeam(EngineTools.getNextTeam(state));
     gameEngine = new GameEngine(state, TestValues.getTestTemplate(), false, true, new Date(System.currentTimeMillis() + 10000000));
-  
+
     Piece rook = gameEngine.getCurrentGameState().getTeams()[1].getPieces()[1];			//rook on 7,3
     Piece rook2 = gameEngine.getCurrentGameState().getTeams()[1].getPieces()[3];		//rook on 7,5
     Move move1 = new Move();
@@ -140,7 +143,7 @@ class GameEngineTest {
     testState.getTeams()[0].setBase(new int[] {2,4});                           //remove outdated base from 0,0 and place it on 2,4
     testState.getTeams()[0].getPieces()[4].setPosition(new int[] {8,9});        //this piece was in the way, now it will attack the enemies base
     testState.getGrid()[8][9] = testState.getTeams()[0].getPieces()[4].getId(); //placed my guy back on the map
-    testState.setCurrentTeam(0);    
+    testState.setCurrentTeam(0);
     Move capture = new Move();
     capture.setNewPosition(new int[] {9,9});
     capture.setPieceId(testState.getTeams()[0].getPieces()[4].getId());         //move to capture a flag initialized
@@ -148,13 +151,13 @@ class GameEngineTest {
     gameEngine.getCurrentGameState().getTeams()[1].setFlags(1);                 //enemy only has 1 flag, if it gets captured the game is over
 
     assertFalse(gameEngine.isGameOver());                                        //the game is still going
-    
+
     gameEngine.makeMove(capture);                                               //move locked in!
-    
+
     Piece proudAttacker = gameEngine.getCurrentGameState().getTeams()[0].getPieces()[4];
     assertArrayEquals(new int[] {3,4}, proudAttacker.getPosition());            //our attacker got respawned, due to pseudo random he will always be on 3,5 (if the grid stays the same)
-    assertTrue(gameEngine.isGameOver());                                        //after the last flag got captured the game is over.  
-    
+    assertTrue(gameEngine.isGameOver());                                        //after the last flag got captured the game is over.
+
     assertEquals(capture, gameEngine.getCurrentGameState().getLastMove());
     assertEquals(0, gameEngine.getCurrentGameState().getCurrentTeam());         //Team 1 is gameOver and got removed, technically it's team 0s turn
   }*/
