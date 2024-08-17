@@ -26,41 +26,26 @@ The default port is 8888 for the released/packaged jar. Or you can also see the 
 
 ### How to get it working in Maven
 You should be able to do the following to get the package working in Maven
-Step 1. Add the following code to your pom.xml file to specify an alternate package repository (Ideally right after the properties block)
+Step 1. Make sure to Install the server project in your local maven rep by doing 
 ```bash
-<repositories>
-    <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/sephdoto/CaptureTheFlagServer</url>
-    </repository>
-</repositories>
+mvn install
 ```
-Step 2. Import the package as a dependency by using the following code in your pom.xml
+in the projects root directly or alternatively by using your IDEs built in maven manager.
+
+Please pay close attention to the version number in the pom.xml of the server.
+
+Step 2. Now you can import the package as a dependency in your very own maven project by using the following dependency import code in your pom.xml
 ```bash
 <dependency>
   <groupId>de.uni-mannheim.swt.pse</groupId>
   <artifactId>ctf</artifactId>
-  <version>1.0.7</version>
+  <version>1.1.0</version>
 </dependency>
 ```
-Note: Version number can change, so you might have to manually change it to the latest one in the dependency line
+Note: Version number can change, so you might have to make sure that it matches up with the one you installed dependency line
 
 IF YOUR CODE HAS ERRORS IMPORTING:
-Remove the plugin option from the pom.xml
-```bash
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-```
-After removal you should just be left with 
-```bash
-    <build>
-    </build>
-```
-in the servers pom.xml file
+Make sure that the server project verion number and your dependency version numbers match up. Also make sure that the package is installed in your local maven repo properly!
 
 ## Main Authors 
 - Raffay Syed
