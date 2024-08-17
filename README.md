@@ -40,10 +40,27 @@ Step 2. Import the package as a dependency by using the following code in your p
 <dependency>
   <groupId>de.uni-mannheim.swt.pse</groupId>
   <artifactId>ctf</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 Note: Version number can change, so you might have to manually change it to the latest one in the dependency line
+
+IF YOUR CODE HAS ERRORS IMPORTING:
+Remove the plugin option from the pom.xml
+```bash
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+```
+After removal you should just be left with 
+```bash
+    <build>
+    </build>
+```
+in the servers pom.xml file
 
 ## Main Authors 
 - Raffay Syed
