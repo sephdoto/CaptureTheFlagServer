@@ -407,7 +407,7 @@ public class GameEngine implements Game {
         new Thread(
             () -> {
               boolean setOnceTrigger = true;
-              while (timeLimitedGameTrigger) {
+              while (timeLimitedGameTrigger && !isGameOver()) {
                 if (isStarted()) {
                   if (setOnceTrigger) {
                     setWhenGameShouldEnd();
@@ -474,7 +474,7 @@ public class GameEngine implements Game {
         new Thread(
             () -> {
               boolean setOnceTrigger = true;
-              while (moveTimeLimitedGameTrigger) {
+              while (moveTimeLimitedGameTrigger && !isGameOver()) {
                 if (isStarted()) { // If teams are full
                   if (setOnceTrigger) {
                     increaseTurnTimer(); // Block for increasing the timer ONCE for the first turn
