@@ -11,7 +11,7 @@
     </parent>
     <groupId>de.uni-mannheim.swt.pse</groupId>
     <artifactId>ctf</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.4</version>
     <name>ctf</name>
     <description>capture the flag</description>
     <packaging>jar</packaging>
@@ -20,6 +20,13 @@
         <springdoc.version>2.3.0</springdoc.version>
         <start-class>de.unimannheim.swt.pse.ctf.CtfApplication</start-class>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Github sephdoto Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/sephdoto/CaptureTheFlagServer</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -70,5 +77,11 @@
         </dependency>
     </dependencies>
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 </project>

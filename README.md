@@ -1,9 +1,5 @@
 # Capture the Flag Server (Praktikum Software Engineering FSS24)
 
-## Requirements Specification
-
-The **requirements specification** can always be found in [REQUIREMENTS_SPECIFICATION.md](REQUIREMENTS_SPECIFICATION.md).
-
 ## Project
 
 Capture the Flag server project which is a Spring-Boot based service.
@@ -27,31 +23,42 @@ The default port is 8888 for the released/packaged jar. Or you can also see the 
 ### How to get it working in Maven for integration testing
 You should be able to do the following to get the package working in Maven
 
-Step 1. Find the file called alternate-pom.xml and rename it to pom.xml. It has tags removed to make it compatible with local maven installs
-
-Step 2. Make sure to Install the server project in your local maven rep by doing 
+Step 1. Import the repo and make sure to Install the server project in your local maven repository by doing 
 ```bash
 mvn install
 ```
-in the projects root directly or alternatively by using your IDEs built in maven manager.
 
-Please pay close attention to the version number in the pom.xml of the server.
-
-Step 3. Now you can import the package as a dependency in your very own maven project by using the following dependency import code in your pom.xml
+Step 2. Now you can import the package as a dependency in your very own maven project by using the following dependency import code in your pom.xml
 ```bash
 <dependency>
   <groupId>de.uni-mannheim.swt.pse</groupId>
   <artifactId>ctf</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.4</version>
 </dependency>
 ```
-Note: 
-1. Version number can change, so you might have to make sure that it matches up with the one you installed in dependency line
-2. You need to add the maven build plugin (look at the stock pom.xml for a hint) in order to export a WORKING standalone jar. The version without is meant to be integrated into another app.
+Notes: 
+1. Version number can change, so make sure that they match up!
+2. If you want to export your own standalone JAR. You should make sure to add the following plugin in between your <build> tags
+```bash
+<plugins>
+  <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+  </plugin>
+</plugins>
+```
+The default pom.xml is meant to be integrated into another app and so the plugin cannot be included by default in the pom.xml
 
 IF YOUR CODE HAS ERRORS IMPORTING:
-Double check and make sure that you replaced the contents of pom.xml with the contents from alternate-pom.xml, and that the version numbers in the installed and imported dependency match up!
+Double check and make sure that the version numbers match between your installed server version number and the version of your depedency import.
+
+## Requirements Specification
+
+The **requirements specification** can always be found in [REQUIREMENTS_SPECIFICATION.md](REQUIREMENTS_SPECIFICATION.md).
 
 ## Main Authors 
 - Raffay Syed
 - Simon Stumpf
+
+## Changelog
+1.1.4 Simplified installation
