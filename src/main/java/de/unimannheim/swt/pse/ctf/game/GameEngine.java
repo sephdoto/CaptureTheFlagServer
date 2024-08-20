@@ -595,9 +595,11 @@ public class GameEngine implements Game {
   }
 
   /**
-   * Ends the game INTERNALLY by setting the endDate Variable
+   * Ends the game internally by setting the endDate Variable,
+   * and externally by starting a Thread that delets the GameSession after 1 minute of waiting.
    *
    * @author rsyed
+   * @author sistumpf
    */
   private void setGameOver() {
     this.gameState.setCurrentTeam(-1); // Sets current team to -1 to indicate game has ended
@@ -605,6 +607,7 @@ public class GameEngine implements Game {
       this.endDate = new Date();
     }
     this.weDoneZo = true;
+    new DeleteInformationThread().start();
   }
 
   /**
@@ -691,4 +694,40 @@ public class GameEngine implements Game {
   // End of Private Internal Methods
   // **************************************************
 
+  /**
+   * After the Game has ended and a certain time in seconds (30) has eclipsed, 
+   * the attributes values get cleared to save memory.
+   * This happens in case no GameSession delete request has been sent by the client.
+   * 
+   * @author sistumpf
+   */
+  private class DeleteInformationThread extends Thread {
+    public void run() {
+      for(int seconds = 30; seconds > 0; seconds--) {
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          deleteInfo();
+        }
+      }
+      deleteInfo();
+    }
+    
+    private void deleteInfo() {
+      nameState = null;
+      startedDate = null;
+      endDate = null;
+      copyOfTemplate = null;
+      gameState = null;
+      currentTime = null;
+      integerToTeam = null;
+      teamToInteger = null;
+      random = null;
+      gameShouldEndBy = null;
+      totalGameTime = null;
+      turnEndsBy = null;
+      turnTime = null;
+      System.gc();
+    }
+  }
 }

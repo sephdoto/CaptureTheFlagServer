@@ -251,6 +251,7 @@ public class BoardController {
     if(!allPiecesPlacable())
       throw new TooManyPiecesException("Some pieces could not be placed, there might be too many blocks or too many pieces");
     new PiecePlacer(gameState, this.boundaries).placePieces(placement);
+    System.gc();
   }
 
   /**
